@@ -6,6 +6,11 @@ var bodyParser = require('body-parser');
 var appRoutes = require('./routes/app_routes');
 var appRoutesUsuario = require('./routes/usuario');
 var appRoutesLogin = require('./routes/login');
+var appRoutesHospital = require('./routes/hospital');
+var appRoutesMedicos = require('./routes/medico');
+var appRoutesBusqueda = require('./routes/busqueda');
+var appRoutesUpload = require('./routes/upload');
+var appRoutesImagenes = require('./routes/imagenes');
 // inicializar variables.
 
 var app = express();
@@ -19,10 +24,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // rutas
-
-app.use('/', appRoutes);
+app.use('/medico', appRoutesMedicos);
+app.use('/upload', appRoutesUpload);
 app.use('/usuario', appRoutesUsuario);
 app.use('/login', appRoutesLogin);
+app.use('/hospital', appRoutesHospital);
+app.use('/busqueda', appRoutesBusqueda);
+app.use('/img', appRoutesImagenes);
+app.use('/', appRoutes);
+
 
 // conexion a la DB
 

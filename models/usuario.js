@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var rolesValidos = {
     values: ['ADMIN_ROLE', 'USER_ROLE'],
     message: '{PATH} no es un rol permitido'
-}
+};
 var uniqueValidator = require('mongoose-unique-validator');
 var Schema = mongoose.Schema;
 // esquema del usuario
